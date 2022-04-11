@@ -123,13 +123,15 @@ echo -e "   PainelSSH " | figlet
 echo -e "      V20 joao" | figlet
 echo -e "                 \033[1;31mBy @Universe_say\033[1;36m"
 echo ""
-echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
-echo -e "\033[1;36m USUARIO E SENHA:\033[1;37m mesmo antigo\033[0m"
+echo -e "\033 ✓ Repositórios atualizado."
+echo -e "\033 ✓ Autobackup atualizado."
+echo -e "\033 ✓ Crontab corrigido."
 echo ""
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
 echo ""
 fi
+echo -e "\033[1;31m• FINALIZADO COM SUCESSO •\033[0m"
 cat /dev/null > ~/.bash_history && history -c
-rm /root/v20joaoupdate > /dev/null 2>&1
-rm /root/v20joao.zip > /dev/null 2>&1
+rm /root/v20-5update > /dev/null 2>&1
+rm /root/v20-5.zip > /dev/null 2>&1
