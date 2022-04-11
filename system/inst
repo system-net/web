@@ -7,7 +7,7 @@ rm *.sh > /dev/null 2>&1
 apt install unzip -y > /dev/null 2>&1
 wget https://github.com/system-net/web/blob/main/system/modulos.zip > /dev/null 2>&1
 unzip modulos.zip > /dev/null 2>&1
-chmod 777 *sh
+chmod 777 modulos.zip
 service ssh restart
 echo -e "\n\033[1;32mCONCLUIDO!\033[0m"
 sleep 1.5
