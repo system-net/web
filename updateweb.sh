@@ -49,6 +49,7 @@ clean_folder () {
 echo ""
 fun_bar "apt-get update -y"
 fun_bar "apt-get upgrade -y"
+fun_bar "apt-get install dos2unix -y"
 fun_bar "service ssh restart"
 ##LIMPIA FILES
 rm -rf $HOME/install*

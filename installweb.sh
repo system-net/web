@@ -85,6 +85,7 @@ atualizar () {
 echo ""
 fun_bar "apt-get update -y"
 fun_bar "apt-get upgrade -y"
+fun_bar "apt-get install dos2unix -y"
 fun_att () {
     service ssh restart > /dev/null 2>&1
     rm -rf $HOME/installweb.sh* > /dev/null 2>&1
