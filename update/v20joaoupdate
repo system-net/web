@@ -60,7 +60,7 @@ clear
 echo -e "\E[44;1;37m    ATUALIZAR O PAINEL V20 joao     \E[0m"
 echo ""
 echo -e "                                \033[1;31mBy @Universe_say\033[1;36m"
-echo -e "   Web" | figlet 
+echo -e "   PainelWeb" | figlet 
 echo -e "                               \033[1;31mPainelSSH\033[1;36m"
 echo ""
 
