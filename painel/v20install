@@ -51,7 +51,7 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 #
 echo -e "\E[44;1;37m    INSTALAR O PAINEL V20 @Universe_say      \E[0m"
 echo ""
-echo -e "   Web" | figlet 
+echo -e "   PainelWeb" | figlet 
 echo -e "                             \033[1;31mPainelSSH\033[1;36m"
 echo ""
 echo -ne "\n\033[1;32m  DEFINA UMA SENHA PARA O\033[1;33m MySQL\033[1;37m: "; read senha
@@ -59,7 +59,7 @@ echo -e "\n\033[1;36m  INICIANDO INSTALACAO \033[1;33m"
 echo ""
 
 #
-echo -e "           \033[1;33m● \033[1;32mINSTALANDO O APACHE2 \033[1;33m●\033[0m"
+echo -e "           \033[1;33m● \033[1;32m 01 de 06 \033[1;33m●\033[0m"
 fun_apache2 () {
     apt-get install apache2 -y > /dev/null 2>&1
 	service apache2 restart > /dev/null 2>&1
@@ -67,7 +67,7 @@ fun_apache2 () {
 fun_bar 'fun_apache2'
 echo ""
 #
-echo -e "           \033[1;33m● \033[1;32mINSTALANDO O MCRYPT \033[1;33m●\033[0m"
+echo -e "           \033[1;33m● \033[1;32m 02 de 06 \033[1;33m●\033[0m"
 fun_mcrypt () {
     apt-get install cron curl unzip -y > /dev/null 2>&1
     apt-get install php5 libapache2-mod-php5 php5-mcrypt -y > /dev/null 2>&1
@@ -78,7 +78,7 @@ fun_bar 'fun_mcrypt'
 echo ""
 #
 
-echo -e "           \033[1;33m● \033[1;32mINSTALANDO O MySQL \033[1;33m●\033[0m"
+echo -e "           \033[1;33m● \033[1;32m 03 de 06 \033[1;33m●\033[0m"
 mariadbver='10.0'
 echo "mariadb-server-$mariadbver mysql-server/root_password password $senha" | debconf-set-selections
 echo "mariadb-server-$mariadbver mysql-server/root_password_again password $senha" | debconf-set-selections
@@ -91,7 +91,7 @@ fun_sql () {
 fun_bar 'fun_sql'
 echo ""
 #
-echo -e "           \033[1;33m● \033[1;32mINSTALANDO O PHPMYADMIN \033[1;33m●\033[0m"
+echo -e "           \033[1;33m● \033[1;32m 04 de 06 \033[1;33m●\033[0m"
 echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
 echo "phpmyadmin phpmyadmin/app-password-confirm password $senha" | debconf-set-selections
 echo "phpmyadmin phpmyadmin/mysql/admin-pass password $senha" | debconf-set-selections
@@ -106,7 +106,7 @@ service apache2 restart > /dev/null 2>&1
 ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 echo ""
 #
-echo -e "           \033[1;33m● \033[1;32mINSTALANDO O LIBSSH2 \033[1;33m●\033[0m"
+echo -e "           \033[1;33m● \033[1;32m 05 de 06 \033[1;33m●\033[0m"
 fun_libsh2 () {
 apt-get install libssh2-1-dev libssh2-php -y > /dev/null 2>&1
 }
@@ -122,7 +122,7 @@ else
 fi
 echo ""
 #
-echo -e "           \033[1;33m● \033[1;32mINSTALANDO O PHP5-CURL \033[1;33m●\033[0m"
+echo -e "           \033[1;33m● \033[1;32m 06 de 06 \033[1;33m●\033[0m"
 fun_curl () {
 apt-get install php5-curl > /dev/null 2>&1
 service apache2 restart
@@ -133,7 +133,7 @@ echo ""
 clear
 echo -e "\E[44;1;37m    INSTALAR O PAINEL V20 @Universe_say      \E[0m"
 echo ""
-echo -e "   Web" | figlet 
+echo -e "   PainelWeb" | figlet 
 echo -e "                             \033[1;31mPainelSSH\033[1;36m"
 echo ""
 echo -e "\033[1;31m ATENCAO \033[1;33m!!!"
@@ -202,7 +202,7 @@ echo ""
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 clear
-echo -e "   Web" | figlet 
+echo -e "   PainelWeb" | figlet 
 echo -e "                             \033[1;31mPainelSSH\033[1;36m"
 echo ""
 echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
@@ -213,10 +213,9 @@ echo -e "\033[1;33m Altere a senha quando logar no painel. \033[0m"
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
 echo ""
-echo -e "\033[1;31m A VPS SERA REINICIADO EM 10 SEGUNDOS...\033[0m"
-sleep 15
-echo -e "\033[1;31mREINICIANDO...\033[0m"
-shutdown -r now
+echo -e "\033[1;31m INSTALAÇÃO COMPLETA \033[0m"
+sleep 5
+echo -e "\033[1;31mLIMPEZA CONCLUIDA\033[0m"
 cat /dev/null > ~/.bash_history && history -c
 rm /root/v20install > /dev/null 2>&1
 rm /root/v20.zip > /dev/null 2>&1
