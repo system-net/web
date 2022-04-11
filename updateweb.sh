@@ -33,16 +33,16 @@ menu ()
 {
 #PAINEL A INSTALAR
 panel_v20 () {
-wget https://raw.githubusercontent.com/system-net/web/main/update/v20update > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/system-net/web/main/update/v20update > /dev/null 2>&1; chmod +x v20update; ./v20update
 }
 panel_v20_2 () {
-wget https://raw.githubusercontent.com/system-net/web/main/update/v20-5update > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/system-net/web/main/update/v20-5update > /dev/null 2>&1; chmod +x v20-5update; ./v20-5update
 }
 panel_v20_3 () {
-wget https://raw.githubusercontent.com/system-net/web/main/update/v20henriqueupdate > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/system-net/web/main/update/v20henriqueupdate > /dev/null 2>&1; chmod +x v20henriqueupdate; ./v20henriqueupdate
 }
 panel_v20_4 () {
-wget https://raw.githubusercontent.com/system-net/web/main/update/v20joaoupdate > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/system-net/web/main/update/v20joaoupdate > /dev/null 2>&1; chmod +x v20joaoupdate; ./v20joaoupdate
 }
 #CLEAN FOLDER
 clean_folder () {
