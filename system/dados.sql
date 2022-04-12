@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id_administrador`, `login`, `senha`, `nome`, `email`, `accessKEY`, `site`) VALUES
-(1, 'admin', 'admin', 'Administrador', 'admin@gmail.com', NULL, '');
+(1, 'admin', 'admin', 'Administrador', 'admin@gmail.com', NULL, 'aplicativo');
 
 -- --------------------------------------------------------
 
@@ -457,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `usuario_ssh` (
   `apagar` int(2) NOT NULL DEFAULT '0',
   `acesso` int(10) NOT NULL DEFAULT '1',
   `online` int(11) NOT NULL DEFAULT '0',
-  `online_start` date DEFAULT NULL,
+  `online_start` datetime DEFAULT NULL,
   `online_hist` int(11) NOT NULL DEFAULT '0',
   `demo` enum('nao','sim') NOT NULL DEFAULT 'nao'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -476,7 +476,7 @@ CREATE TABLE IF NOT EXISTS `usuario_ssh_free` (
   `validade` datetime NOT NULL,
   `ip` varchar(255) NOT NULL,
   `online` int(11) NOT NULL DEFAULT '0',
-  `online_start` date DEFAULT NULL,
+  `online_start` datetime DEFAULT NULL,
   `online_hist` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
