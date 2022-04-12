@@ -217,5 +217,5 @@ echo -e "\033[1;31m INSTALAÇÃO COMPLETA \033[0m"
 sleep 5
 echo -e "\033[1;31mLIMPEZA CONCLUIDA\033[0m"
 cat /dev/null > ~/.bash_history && history -c
-rm /root/v20install > /dev/null 2>&1
-rm /root/v20.zip > /dev/null 2>&1
+rm /root/v20henriqueinstall > /dev/null 2>&1
+rm /root/v20henrique.zip > /dev/null 2>&1
