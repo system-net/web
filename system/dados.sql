@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id_administrador`, `login`, `senha`, `nome`, `email`, `accessKEY`, `site`) VALUES
-(1, 'admin', 'admin', 'Administrador', 'admin@gmail.com', NULL, '');
+(1, 'admin', 'admin', 'Administrador', 'admin@gmail.com', NULL, 'indisponivel');
 
 -- --------------------------------------------------------
 
@@ -225,8 +225,8 @@ CREATE TABLE IF NOT EXISTS `historico_login` (
 CREATE TABLE IF NOT EXISTS `hist_usuario_ssh_online` (
 `id_hist_usrSSH` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `hora_conexao` date NOT NULL,
-  `hora_desconexao` date DEFAULT NULL,
+  `hora_conexao` datetime NOT NULL,
+  `hora_desconexao` datetime DEFAULT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -239,8 +239,8 @@ CREATE TABLE IF NOT EXISTS `hist_usuario_ssh_online` (
 CREATE TABLE IF NOT EXISTS `hist_usuario_ssh_online_free` (
 `id_hist_usrSSH` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `hora_conexao` date NOT NULL,
-  `hora_desconexao` date DEFAULT NULL,
+  `hora_conexao` datetime NOT NULL,
+  `hora_desconexao` datetime DEFAULT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -437,7 +437,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `id_mestre`, `ativo`, `atualiza_dados`, `login`, `senha`, `nome`, `avatar`, `email`, `celular`, `data_cadastro`, `tipo`, `subrevenda`, `validade`, `suspenso`, `token_user`, `permitir_demo`, `dias_demo_sub`, `apagar`, `idcliente_mp`, `tokensecret_mp`, `dadosdeposito`) VALUES
-(29, 0, 1, 0, 'geral', 'geral', 'Admin', '1', NULL, '(99) 91111-1111', '2020-02-13 09:37:28', 'vpn', 'nao', NULL, NULL, '03AD5C353', 0, 0, 0, '', '', '');
+(29, 0, 1, 0, 'geral', 'geral', 'Admin', '1', NULL, '(69) 99226-1779', '2020-02-13 09:37:28', 'vpn', 'nao', NULL, NULL, '03AD5C353', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -457,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `usuario_ssh` (
   `apagar` int(2) NOT NULL DEFAULT '0',
   `acesso` int(10) NOT NULL DEFAULT '1',
   `online` int(11) NOT NULL DEFAULT '0',
-  `online_start` date DEFAULT NULL,
+  `online_start` datetime DEFAULT NULL,
   `online_hist` int(11) NOT NULL DEFAULT '0',
   `demo` enum('nao','sim') NOT NULL DEFAULT 'nao'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -476,7 +476,7 @@ CREATE TABLE IF NOT EXISTS `usuario_ssh_free` (
   `validade` datetime NOT NULL,
   `ip` varchar(255) NOT NULL,
   `online` int(11) NOT NULL DEFAULT '0',
-  `online_start` date DEFAULT NULL,
+  `online_start` datetime DEFAULT NULL,
   `online_hist` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
