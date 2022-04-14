@@ -35,9 +35,6 @@ menu ()
 panel_v20 () {
 wget https://raw.githubusercontent.com/system-net/web/main/painel/v20install > /dev/null 2>&1; chmod +x v20install; ./v20install
 }
-panel_v20_2 () {
-wget https://raw.githubusercontent.com/system-net/web/main/painel/v20-5install > /dev/null 2>&1; chmod +x v20-5install; ./v20-5install
-}
 panel_v20_3 () {
 wget https://raw.githubusercontent.com/system-net/web/main/painel/v20henriqueinstall > /dev/null 2>&1; chmod +x v20henriqueinstall; ./v20henriqueinstall
 }
@@ -111,7 +108,6 @@ echo -e "\E[41;1;37mINSTALL PAINEL REVENDA SSH \033[1;32m[\033[1;37m VERSAO: v1 
 echo -e "$barra"
 echo ""
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20       \033[1;31m " 
-echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20-5     \033[1;31m " 
 echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 HENRIQUE       \033[1;31m " 
 echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 JOAO     \033[1;32m "
 echo -e "\033[1;31m[\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
@@ -128,11 +124,6 @@ case "$x" in
 1 | 01)
 clear
 panel_v20
-exit;
-;;
-2 | 02)
-clear
-panel_v20_2
 exit;
 ;;
 3 | 03)

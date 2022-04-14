@@ -35,9 +35,6 @@ menu ()
 panel_v20 () {
 wget https://raw.githubusercontent.com/system-net/web/main/update/v20update > /dev/null 2>&1; chmod +x v20update; ./v20update
 }
-panel_v20_2 () {
-wget https://raw.githubusercontent.com/system-net/web/main/update/v20-5update > /dev/null 2>&1; chmod +x v20-5update; ./v20-5update
-}
 panel_v20_3 () {
 wget https://raw.githubusercontent.com/system-net/web/main/update/v20henriqueupdate > /dev/null 2>&1; chmod +x v20henriqueupdate; ./v20henriqueupdate
 }
@@ -111,7 +108,6 @@ echo -e "\E[41;1;37mATUALIZAR PAINEL REVENDA SSH \033[1;32m[\033[1;37m VERSAO: v
 echo -e "$barra"
 echo ""
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL UPDATE V20       \033[1;31m " 
-echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL UPDATE V20-5     \033[1;31m " 
 echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL UPDATE V20 HENRIQUE       \033[1;31m " 
 echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPAINEL UPDATE V20 JOAO     \033[1;32m "
 echo -e "\033[1;31m[\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
@@ -128,11 +124,6 @@ case "$x" in
 1 | 01)
 clear
 panel_v20
-exit;
-;;
-2 | 02)
-clear
-panel_v20_2
 exit;
 ;;
 3 | 03)
