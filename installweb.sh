@@ -108,9 +108,9 @@ echo -e "\E[41;1;37mINSTALL PAINEL REVENDA SSH \033[1;32m[\033[1;37m VERSAO: v1 
 echo -e "$barra"
 echo ""
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20       \033[1;31m " 
-echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 HENRIQUE       \033[1;31m " 
-echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 JOAO     \033[1;32m "
-echo -e "\033[1;31m[\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
+echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 HENRIQUE       \033[1;31m " 
+echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 JOAO     \033[1;32m "
+echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
 echo -e "\033[1;31m[\033[1;36m15\033[1;31m] \033[1;37m• \033[1;33mPAINEL REMOVE                \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
 echo -e "\033[1;31m[\033[1;36m16\033[1;31m] \033[1;35m[!] \033[1;32mATUALIZAR                \033[1;31mRam:\033[1;37m $_usor "
 echo -e "\033[1;31m[\033[1;36m17\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m IPW \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop "
@@ -126,17 +126,17 @@ clear
 panel_v20
 exit;
 ;;
-3 | 03)
+2 | 02)
 clear
 panel_v20_3
 exit;
 ;;
-4 | 04)
+3 | 03)
 clear
 panel_v20_4
 exit;
 ;;      
-5 | 05)
+4 | 04)
 clear
 clean_folder
 exit;
