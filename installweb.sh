@@ -42,7 +42,7 @@ panel_v20_4 () {
 wget https://raw.githubusercontent.com/system-net/web/main/painel/v20joaoinstall > /dev/null 2>&1; chmod +x v20joaoinstall; ./v20joaoinstall
 }
 panel_v20_2 () {
-wget https://raw.githubusercontent.com/system-net/web/main/painel/appinstall > /dev/null 2>&1; chmod +x v20henriqueinstall; ./v20henriqueinstall
+wget https://raw.githubusercontent.com/system-net/web/main/painel/appinstall > /dev/null 2>&1; chmod +x appinstall; ./appinstall
 }
 #CLEAN FOLDER
 clean_folder () {
