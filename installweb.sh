@@ -41,6 +41,9 @@ wget https://raw.githubusercontent.com/system-net/web/main/painel/v20henriqueins
 panel_v20_4 () {
 wget https://raw.githubusercontent.com/system-net/web/main/painel/v20joaoinstall > /dev/null 2>&1; chmod +x v20joaoinstall; ./v20joaoinstall
 }
+panel_v20_2 () {
+wget https://raw.githubusercontent.com/system-net/web/main/painel/appinstall > /dev/null 2>&1; chmod +x v20henriqueinstall; ./v20henriqueinstall
+}
 #CLEAN FOLDER
 clean_folder () {
 echo ""
@@ -110,7 +113,8 @@ echo ""
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20       \033[1;31m " 
 echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 HENRIQUE       \033[1;31m " 
 echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSH V20 JOAO     \033[1;32m "
-echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
+echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mSITE GERAL     \033[1;32m "
+echo -e "\033[1;31m[\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
 echo -e "\033[1;31m[\033[1;36m15\033[1;31m] \033[1;37m• \033[1;33mPAINEL REMOVE                \033[1;36m\033[1;31m\033[1;36m \033[1;37m "
 echo -e "\033[1;31m[\033[1;36m16\033[1;31m] \033[1;35m[!] \033[1;32mATUALIZAR                \033[1;31mRam:\033[1;37m $_usor "
 echo -e "\033[1;31m[\033[1;36m17\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m IPW \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop "
@@ -137,6 +141,11 @@ panel_v20_4
 exit;
 ;;      
 4 | 04)
+clear
+panel_v20_2
+exit;
+;;      
+14)
 clear
 clean_folder
 exit;
