@@ -47,11 +47,11 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 rm $HOME/installweb.sh > /dev/null 2>&1
 rm /root/site.zip > /dev/null 2>&1
 ####################################################################################################
-echo -e "\E[44;1;37m    INSTALAR PAINEL WEB      \E[0m"
+echo -e "\E[44;1;37m    INSTALAR SITE      \E[0m"
 echo ""
 echo -e "                              \033[1;31mBy @Universe_say\033[1;36m"
-echo -e "   Painel Web" | figlet 
-echo -e "                             \033[1;31mPainelSSH V20\033[1;36m"
+echo -e "   Web" | figlet 
+echo -e "                             \033[1;31mPainel SITE\033[1;36m"
 echo ""
 echo -ne "\n\033[1;32m  DEFINA UMA SENHA PARA O\033[1;33m MySQL\033[1;37m: "; read senha
 echo -e "\n\033[1;36m  INICIANDO INSTALACAO \033[1;33m"
@@ -129,10 +129,10 @@ fun_bar 'fun_curl'
 echo ""
 #
 clear
-echo -e "\E[44;1;37m    INSTALAR PAINEL WEB  \E[0m"
+echo -e "\E[44;1;37m    INSTALAR SITE  \E[0m"
 echo ""
 echo -e "                              \033[1;31mBy @Universe_say\033[1;36m"
-echo -e "   Painel Web" | figlet
+echo -e "   Web" | figlet
 echo ""
 echo -e "\033[1;31m ATENCAO \033[1;33m!!!"
 echo ""
@@ -159,15 +159,10 @@ echo ""
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 clear
-echo -e "   Painel Web" | figlet
-echo -e "      V20" | figlet
+echo -e "   Web" | figlet
+echo -e "      SITE" | figlet
 echo -e "                 \033[1;31mBy @Universe_say\033[1;36m"
 echo ""
-echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
-echo -e "\033[1;36m USUARIO:\033[1;37m admin\033[0m"
-echo -e "\033[1;36m SENHA:\033[1;37m admin\033[0m"
-echo ""
-echo -e "\033[1;33m Altere a senha quando logar no painel! \033[0m"
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
 echo ""
