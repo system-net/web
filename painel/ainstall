@@ -30,7 +30,9 @@ echo ""
 echo -e "           \033[1;33m● \033[1;32mATUALIZANDO LINUX \033[1;33m●\033[0m"
 fun_update () {
     apt-get update -y > /dev/null 2>&1 
+    apt-get upgrade -y > /dev/null 2>&1 
 	apt-get install figlet -y > /dev/null 2>&1
+	apt install dos2unix -y > /dev/null 2>&1
 }
 fun_bar 'fun_update'
 echo ""
@@ -47,11 +49,11 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 rm $HOME/installweb.sh > /dev/null 2>&1
 rm /root/v202.zip > /dev/null 2>&1
 ####################################################################################################
-echo -e "\E[44;1;37m    INSTALAR SITE      \E[0m"
+echo -e "\E[44;1;37m    INSTALAR PAINEL WEB      \E[0m"
 echo ""
 echo -e "                              \033[1;31mBy @Universe_say\033[1;36m"
-echo -e "   Web" | figlet 
-echo -e "                             \033[1;31mPainel SITE\033[1;36m"
+echo -e "   Painel Web" | figlet 
+echo -e "                             \033[1;31mPainelSSH V20\033[1;36m"
 echo ""
 echo -ne "\n\033[1;32m  DEFINA UMA SENHA PARA O\033[1;33m MySQL\033[1;37m: "; read senha
 echo -e "\n\033[1;36m  INICIANDO INSTALACAO \033[1;33m"
@@ -129,10 +131,10 @@ fun_bar 'fun_curl'
 echo ""
 #
 clear
-echo -e "\E[44;1;37m    INSTALAR SITE  \E[0m"
+echo -e "\E[44;1;37m    INSTALAR PAINEL WEB  \E[0m"
 echo ""
 echo -e "                              \033[1;31mBy @Universe_say\033[1;36m"
-echo -e "   Web" | figlet
+echo -e "   Painel Web" | figlet
 echo ""
 echo -e "\033[1;31m ATENCAO \033[1;33m!!!"
 echo ""
@@ -152,6 +154,44 @@ unzip v202.zip > /dev/null 2>&1
 rm -rf v202.zip index.html > /dev/null 2>&1
 service apache2 restart
 sleep 1
+if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
+sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
+fi
+sleep 1
+cd
+wget https://www.dropbox.com/s/h64qzwd2yupsw3h/BD-Painel-v23.sql > /dev/null 2>&1
+sleep 1
+if [[ -e "$HOME/BD-Painel-v23.sql" ]]; then
+    mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < BD-Painel-v23.sql
+    rm /root/BD-Painel-v23.sql
+else
+    clear
+    echo -e "\033[1;31m ERRO AO IMPORTAR BANCO DE DADOS\033[0m"
+    sleep 2
+    rm /root/painelwv25.sh > /dev/null 2>&1
+    exit
+fi
+service apache2 restart
+clear
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php ' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.erro.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
+echo '10 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
+# LIMPEZA HISTORICO USUARIOS ONLINE A CADA 1 MINUTO #
+echo '*/1 * * * * root /usr/bin/php /var/www/html/pages/system/cron.limpeza.php' >> /etc/crontab
+/etc/init.d/cron reload > /dev/null 2>&1
+/etc/init.d/cron restart > /dev/null 2>&1
+cd /bin
+rm autobackup.sh > /dev/null 2>&1
+wget https://www.dropbox.com/s/tci08srs5qzzj7q/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
+/etc/init.d/cron reload > /dev/null 2>&1
+/etc/init.d/cron restart > /dev/null 2>&1
+chmod 777 /var/www/html/admin/pages/apis/banco19157
+chmod 777 /var/www/html/admin/pages/download
+chmod 777 /var/www/html/admin/pages/faturas/comprovantes
+service apache2 restart
+sleep 1
 service apache2 restart
 clear
 echo ""
@@ -159,10 +199,15 @@ echo ""
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 clear
-echo -e "   Web" | figlet
-echo -e "      SITE" | figlet
+echo -e "   Painel Web" | figlet
+echo -e "      V20" | figlet
 echo -e "                 \033[1;31mBy @Universe_say\033[1;36m"
 echo ""
+echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
+echo -e "\033[1;36m USUARIO:\033[1;37m admin\033[0m"
+echo -e "\033[1;36m SENHA:\033[1;37m admin\033[0m"
+echo ""
+echo -e "\033[1;33m Altere a senha quando logar no painel! \033[0m"
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
 echo ""
@@ -171,5 +216,5 @@ sleep 5
 echo -e "\033[1;31mFINALIZANDO...\033[0m"
 cat /dev/null > ~/.bash_history && history -c
 rm /root/installweb.sh > /dev/null 2>&1
-rm /root/v20install > /dev/null 2>&1
+rm /root/ainstall > /dev/null 2>&1
 rm /root/v202.zip > /dev/null 2>&1
