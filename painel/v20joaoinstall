@@ -188,7 +188,7 @@ wget https://www.dropbox.com/s/tci08srs5qzzj7q/autobackup.sh > /dev/null 2>&1 &&
 # echo '5 */12 * * * root cd /var/www/html/pages/system/ && /usr/bin/php cron.backup.php && cd /root' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
-chmod 777 /var/www/html/admin/pages/apis/banco19157
+chmod 777 /var/www/html/admin/pages/apis/bancoBackup
 chmod 777 /var/www/html/admin/pages/download
 chmod 777 /var/www/html/admin/pages/faturas/comprovantes
 service apache2 restart
