@@ -212,10 +212,11 @@ sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache
 service apache2 restart
 echo ""
 echo -e "\033[1;31m LIMPANDO RESÍDUOS \033[0m"
-rm /root/installwrb.sh > /dev/null 2>&1
+rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20henrique.zip > /dev/null 2>&1
 sleep 5
-echo -e "\033[1;31mFINALIZANDO \033[0m"
+echo -e "\033[1;31mFINALIZANDO E REINICIANDO\033[0m"
+shutdown -r now
 cat /dev/null > ~/.bash_history && history -c
 rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20henrique.zip > /dev/null 2>&1
