@@ -153,16 +153,6 @@ unzip site.zip > /dev/null 2>&1
 rm -rf site.zip index.html > /dev/null 2>&1
 service apache2 restart
 sleep 1
-if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
-sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
-fi
-sleep 1
-service apache2 restart
-clear
-echo ""
-#
-clear
-IP=$(wget -qO- ipv4.icanhazip.com)
 clear
 echo -e "   ConnectWeb" | figlet
 echo -e "      Web" | figlet
