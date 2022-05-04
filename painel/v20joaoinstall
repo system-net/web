@@ -173,6 +173,7 @@ fi
 service apache2 restart
 clear
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/erros.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
 echo '10 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
@@ -215,8 +216,7 @@ echo -e "\033[1;31m LIMPANDO RESÍDUOS \033[0m"
 rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20joao.zip > /dev/null 2>&1
 sleep 5
-echo -e "\033[1;31mFINALIZANDO E REINICIANDO\033[0m"
-shutdown -r now
+echo -e "\033[1;31mFINALIZANDO\033[0m"
 cat /dev/null > ~/.bash_history && history -c
 rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20joao.zip > /dev/null 2>&1
