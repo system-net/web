@@ -190,8 +190,6 @@ chmod 777 /var/www/html/admin/pages/apis/bancoBackup
 chmod 777 /var/www/html/admin/pages/download
 chmod 777 /var/www/html/admin/pages/faturas/comprovantes
 service apache2 restart
-sleep 1
-service apache2 restart
 clear
 echo ""
 #
@@ -213,7 +211,7 @@ echo -e "\033[1;31m LIMPANDO RESÍDUOS \033[0m"
 rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20henrique.zip > /dev/null 2>&1
 sleep 5
-echo -e "\033[1;31mFINALIZANDO\033[0m"
+echo -e "\033[1;31mFINALIZADO\033[0m"
 cat /dev/null > ~/.bash_history && history -c
 rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20henrique.zip > /dev/null 2>&1
