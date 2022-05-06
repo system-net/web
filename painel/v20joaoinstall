@@ -29,8 +29,7 @@ tput cnorm
 echo ""
 echo -e "           \033[1;33m● \033[1;32mATUALIZANDO LINUX \033[1;33m●\033[0m"
 fun_update () {
-    apt-get update -y > /dev/null 2>&1 
-    apt-get upgrade -y > /dev/null 2>&1 
+    apt-get update -y > /dev/null 2>&1
 	apt-get install figlet -y > /dev/null 2>&1
 }
 fun_bar 'fun_update'
@@ -175,8 +174,8 @@ echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/c
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/erros.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
-echo '12 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
-echo '*/3 * * * * root /usr/bin/php /var/www/html/pages/system/cron.limpeza.php' >> /etc/crontab
+echo '15 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
+echo '*/5 * * * * root /usr/bin/php /var/www/html/pages/system/cron.limpeza.php' >> /etc/crontab
 echo '*/10 * * * * root /bin/autobackup.sh' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
