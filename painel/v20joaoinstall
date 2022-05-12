@@ -31,6 +31,7 @@ echo -e "           \033[1;33m● \033[1;32mATUALIZANDO LINUX \033[1;33m●\033[
 fun_update () {
     apt-get update -y > /dev/null 2>&1
 	apt-get install figlet -y > /dev/null 2>&1
+	apt install dos2unix -y > /dev/null 2>&1
 }
 fun_bar 'fun_update'
 echo ""
