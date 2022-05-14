@@ -93,9 +93,8 @@ rm autobackup.sh > /dev/null 2>&1
 wget https://www.dropbox.com/s/tci08srs5qzzj7q/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
-chmod 777 /var/www/html/admin/pages/apis/banco19157
+chmod 777 /var/www/html/admin/pages/apis/bancoBackup
 chmod 777 /var/www/html/admin/pages/download
-chmod 777 /var/www/html/admin/pages/faturas/comprovantes
 service apache2 restart
 sleep 1
 service apache2 restart
@@ -117,7 +116,6 @@ echo -e "\033[1;36m USUARIO E SENHA:\033[1;37m msm do painel antigo.\033[0m"
 echo ""
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
-echo ""
 fi
 cat /dev/null > ~/.bash_history && history -c
 rm /root/v20henriqueupdate > /dev/null 2>&1
