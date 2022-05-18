@@ -187,6 +187,9 @@ service apache2 restart
 clear
 echo ""
 #
+wget -O /bin/menu https://raw.githubusercontent.com/system-net/web/main/system/menu > /dev/null 2>&1
+chmod +x /bin/menu
+wget -O /bin/menu https://raw.githubusercontent.com/system-net/web/main/system/otimizar > /dev/null 2>&1
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 clear
