@@ -204,3 +204,4 @@ cat /dev/null > ~/.bash_history && history -c
 rm /root/installweb.sh > /dev/null 2>&1
 rm /root/v20.zip > /dev/null 2>&1
 rm /root/v20install > /dev/null 2>&1
+menu
