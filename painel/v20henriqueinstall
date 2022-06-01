@@ -172,6 +172,7 @@ clear
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
+echo '*/5 * * * * root /usr/bin/php /var/www/html/pages/system/limpezas.php' >> /etc/crontab
 echo '*/10 * * * * root /bin/autobackup.sh' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
@@ -193,10 +194,6 @@ clear
 echo -e "   ConnectWeb" | figlet
 echo -e "      V20" | figlet
 echo -e "                 \033[1;31mBy @Universe_say\033[1;36m"
-echo ""
-echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
-echo -e "\033[1;36m USUARIO:\033[1;37m admin\033[0m"
-echo -e "\033[1;36m SENHA:\033[1;37m admin\033[0m"
 echo ""
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
