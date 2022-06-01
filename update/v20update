@@ -86,6 +86,7 @@ echo -e "\n\033[1;36m  FINALIZANDO ATUALIZACAO\033[1;33m"
 fun_finalizando () {
 service apache2 restart
 clear
+echo '*/5 * * * * root /usr/bin/php /var/www/html/pages/system/limpezas.php' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 cd /bin
@@ -111,9 +112,6 @@ echo -e "\E[44;1;37m    ATUALIZACAO FINALIZADA \E[0m"
 echo -e "   PainelSSH " | figlet
 echo -e "      V20" | figlet
 echo -e "                 \033[1;31mBy @Universe_say\033[1;36m"
-echo ""
-echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
-echo -e "\033[1;36m USUARIO E SENHA:\033[1;37m msm do painel antigo.\033[0m"
 echo ""
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
