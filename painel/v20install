@@ -138,7 +138,7 @@ echo -ne "\033[1;32m INFORME A MESMA SENHA\033[1;37m: "; read senha
 echo -e "\033[1;32mOK\033[1;37m"
 sleep 1
 mysql -h localhost -u root -p$senha -e "CREATE DATABASE sshplus"
-fun_bar 'sleep 4'
+fun_bar 'sleep 2'
 echo ""
 clear
 #
@@ -149,7 +149,6 @@ sleep 1
 unzip v20.zip > /dev/null 2>&1
 rm -rf v20.zip index.html > /dev/null 2>&1
 service apache2 restart
-sleep 1
 if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
 sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
@@ -163,7 +162,7 @@ if [[ -e "$HOME/BD-Painel-v23.sql" ]]; then
 else
     clear
     echo -e "\033[1;31m ERRO AO IMPORTAR BANCO DE DADOS\033[0m"
-    sleep 2
+    sleep 1
     rm /root/installweb.sh > /dev/null 2>&1
     exit
 fi
