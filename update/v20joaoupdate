@@ -86,7 +86,7 @@ echo -e "\n\033[1;36m  FINALIZANDO ATUALIZACAO\033[1;33m"
 fun_finalizando () {
 service apache2 restart
 clear
-echo '*/5 * * * * root /usr/bin/php /var/www/html/pages/system/cron.status.php' >> /etc/crontab
+echo '*/5 * * * * root /usr/bin/php /var/www/html/pages/system/limpeza.online.php' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 cd /bin
