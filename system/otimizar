@@ -91,4 +91,4 @@ swap3=$(free -h | grep -i swap | awk {'print $3'})
 echo -e "\033[1;37mOtimizado:\033[1;31m $(expr $MEM1 - $MEM2)%\033[0m"
 echo ""
 echo -e "\033[1;32m• INSTALAÇÃO CONCLUÍDA •\033[0m"
-echo "reboot"
+reboot
