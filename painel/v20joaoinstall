@@ -171,20 +171,21 @@ clear
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php' >> /etc/crontab
 echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
-echo '*/360 * * * * root /bin/autobackup.sh' >> /etc/crontab
+echo '0 */6 * * * root /bin/autobackup.sh' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 cd /bin
 rm autobackup.sh > /dev/null 2>&1
-wget https://www.dropbox.com/s/tci08srs5qzzj7q/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
+wget https://www.dropbox.com/s/ich6c7ox0ez0crt/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 chmod 777 /var/www/html/admin/pages/apis/bancoBackup
 service apache2 restart
+sleep 1
+service apache2 restart
+clear
 echo ""
 #
-wget -O /bin/menu https://raw.githubusercontent.com/system-net/web/main/system/menu > /dev/null 2>&1 && chmod +x /bin/menu
-wget -O /bin/menu https://raw.githubusercontent.com/system-net/web/main/system/otimizar > /dev/null 2>&1
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 clear
