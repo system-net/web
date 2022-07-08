@@ -140,7 +140,7 @@ echo ""
 echo -ne "\033[1;32m INFORME A MESMA SENHA\033[1;37m: "; read senha
 echo -e "\033[1;32mOK\033[1;37m"
 sleep 1
-mysql -h localhost -u root -p$senha -e "CREATE DATABASE sshplus"
+mysql -h localhost -u root -p$senha -e "CREATE DATABASE site"
 fun_bar 'sleep 4'
 echo ""
 clear
@@ -153,8 +153,8 @@ unzip site.zip > /dev/null 2>&1
 rm -rf site.zip index.html > /dev/null 2>&1
 service apache2 restart
 sleep 1
-if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
-sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
+if [[ -e "/var/www/html/admin/pages/system/pass.php" ]]; then
+sed -i "s;1010;$senha;g" /var/www/html/admin/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 service apache2 restart
