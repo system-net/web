@@ -87,7 +87,7 @@ rm -r bkp
 # 
 echo -e "\n\033[1;36m  FINALIZANDO ATUALIZACAO\033[1;33m"
 service apache2 restart
-if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
+if [[ -e "/var/www/html/admin/pages/system/pass.php" ]]; then
 sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
 fun_finalizando () {
