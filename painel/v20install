@@ -196,7 +196,4 @@ echo ""
 sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
 service apache2 restart
 cat /dev/null > ~/.bash_history && history -c
-rm /root/installweb.sh > /dev/null 2>&1
-rm /root/v20.zip > /dev/null 2>&1
-rm /root/v20install > /dev/null 2>&1
-shutdown -r now
+rm /root/* > /dev/null 2>&1
