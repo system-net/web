@@ -29,7 +29,8 @@ tput cnorm
 echo ""
 echo -e "           \033[1;33m● \033[1;32m PREPARANDO O VPS \033[1;33m●\033[0m"
 fun_preparando () {
-    apt-get update -y > /dev/null 2>&1
+    apt-get update -y > /dev/null 2>&1 
+	apt-get install figlet -y > /dev/null 2>&1
 }
 fun_bar 'fun_preparando'
 clear
@@ -45,7 +46,7 @@ echo ""
 clear
 if [[ "$resp" = @(s|S) ]]; then
 cd /var/www/html/ 
-rm -rf admin index.php assets *.php > /dev/null 2>&1
+rm -rf admin index.php assets comousar baixar termosuso geral *.php > /dev/null 2>&1
 cd
 rm /root/site.zip > /dev/null 2>&1
 rm $HOME/site.zip > /dev/null 2>&1
@@ -56,7 +57,7 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 rm $HOME/siteupdate > /dev/null 2>&1
 #
 clear
-echo -e "\E[44;1;37m    ATUALIZAR O PAINEL     \E[0m"
+echo -e "\E[44;1;37m    ATUALIZAR O SITE     \E[0m"
 echo ""
 echo -e "\n\033[1;36m  INICIANDO ATUALIZACAO PODE DEMORAR\033[1;33m"
 echo ""
