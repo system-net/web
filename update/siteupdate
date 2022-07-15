@@ -46,7 +46,7 @@ echo ""
 clear
 if [[ "$resp" = @(s|S) ]]; then
 cd /var/www/html/ 
-rm -rf admin index.php assets comousar baixar termosuso geral *.php > /dev/null 2>&1
+rm -rf admin index.php assets comousar baixar termosuso geral suporte *.php > /dev/null 2>&1
 cd
 rm /root/site.zip > /dev/null 2>&1
 rm $HOME/site.zip > /dev/null 2>&1
